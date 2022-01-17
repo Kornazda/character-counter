@@ -1,11 +1,11 @@
-const engInp = document.getElementById('engInput')
-const engButton = document.getElementById('engButton')
+const engInp = document.getElementById("engInput");
+const form = document.querySelector("form");
 
-let vowAnswer = document.getElementById('vowels')
-let consAnswer = document.getElementById('consonants')
-let yAnswer = document.getElementById('ys')
-let wordsAnswer = document.getElementById('words')
-let charAnswer = document.getElementById('chars')
+const vowAnswer = document.getElementById("vowels");
+const consAnswer = document.getElementById("consonants");
+const yAnswer = document.getElementById("ys");
+const wordsAnswer = document.getElementById("words");
+const charAnswer = document.getElementById("chars");
 
 let consonants = 0;
 let vowels = 0;
@@ -13,34 +13,48 @@ let yCounter = 0;
 let wordCounter = 0;
 let characterCounter = 0;
 
+const number = "1234567890";
+const vowelLetters = "aeiou";
+
+engInp.onkeypress = (e) => {
+  const chr = String.fromCharCode(e.which);
+  if (number.indexOf(chr) >= 0) return false;
+};
+
 const counter = () => {
-    for (let i = 0; i < engInp.value.length; i++) {
-        if (engInp.value[i] == "a" || engInp.value[i] == "e" || engInp.value[i] == "i" || engInp.value[i] == "o" || engInp.value[i] == "u") {
-            vowels++
-        } else if (engInp.value[i] == " "){
-            wordCounter++
-        } else if (engInp.value[i] == "y" || engInp.value[i] == "Y"){
-            yCounter++
-        } else {
-            consonants++
-        }
+  if (engInp.value.trim() === "") {
+    alert("box has whitespaces please do not use them");
+    engInp.value = "";
+    return;
+  }
+
+  for (let i = 0; i < engInp.value.trim().length; i++) {
+    if (vowelLetters.includes(engInp.value[i])) {
+      vowels++;
+    } else if (engInp.value.trim()[i] === " ") {
+      wordCounter++;
+    } else if (engInp.value[i].toLowerCase() === "y") {
+      yCounter++;
+    } else {
+      consonants++;
     }
+  }
 
-    
-    vowAnswer.innerHTML = vowels
-    consAnswer.innerHTML = consonants
-    yAnswer.innerHTML = yCounter
-    wordsAnswer.innerHTML = wordCounter + 1
-    characterCounter = consonants + vowels
-    charAnswer.innerHTML = characterCounter
-}
+  vowAnswer.innerHTML = vowels;
+  consAnswer.innerHTML = consonants;
+  yAnswer.innerHTML = yCounter;
+  wordsAnswer.innerHTML = wordCounter + 1;
+  characterCounter = consonants + vowels;
+  charAnswer.innerHTML = characterCounter;
+};
 
+form.onsubmit = (e) => {
+  e.preventDefault();
 
-engButton.addEventListener('click', () => {
-     counter()
-     consonants = 0;
-     vowels = 0;
-     yCounter = 0;
-     wordCounter = 0;
-     characterCounter = 0;
-})
+  counter();
+  consonants = 0;
+  vowels = 0;
+  yCounter = 0;
+  wordCounter = 0;
+  characterCounter = 0;
+};
