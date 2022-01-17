@@ -1,6 +1,6 @@
 # Character-Counter 
 
-[Versions](https://img.shields.io/badge/char--counter-v1.0.0--dev-green)
+![Versions](https://img.shields.io/badge/char--counter-v1.0.0--dev-green)
 
 Hello, I am Kornazda and this is my first js Project
 
