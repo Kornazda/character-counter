@@ -1,4 +1,4 @@
-# Character-Counter
+# Character-Counter (https://img.shields.io/badge/char--counter-v1.0.0--dev-green)
 
 Hello, I am Kornazda and this is my first js Project
 
