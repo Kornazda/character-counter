@@ -23,3 +23,7 @@ Hello, I am Kornazda and this is my first js Project
 
 - Do not enter any numbers or symbols on text field
 - Do not use Empty Characters
+
+## Official Website
+
+Link: https://charcounter-jan.netlify.app/
