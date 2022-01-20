@@ -19,10 +19,6 @@ Hello, I am Kornazda and this is my first js Project
 - Basic CSS
 - Native JS
 
-## Warnings!
-
-- Do not enter any numbers or symbols on text field
-- Do not use Empty Characters
 
 ## Official Website
 
